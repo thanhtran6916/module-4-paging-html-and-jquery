@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LIst</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../../static/listMain.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" onclick="showCreate()">
+                Create
+            </button>
+        </div>
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Image</th>
+                </tr>
+                </thead>
+                <tbody id="showListTable">
+
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <nav aria-label="...">
+                <ul id="pagination" class="pagination">
+                    <li id="previous" class="page-item">
+
+                    </li>
+                    <ul id="pagePosition" class="pagination">
+
+                    </ul>
+                    <li id="next" class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="formCustomer">
+                    <input type="text" name="id" id="id" hidden>
+                    <div class="mb-3">
+                        <label class="form-label">Name</label>
+                        <input id="name" type="text" class="form-control" name="name">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Address</label>
+                        <input id="address" type="text" class="form-control" name="address">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Image</label>
+                        <input type="file" class="form-control" name="image">
+                        <img id="image" width="150px" height="150px" alt="">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button id="save" type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                        onclick="saveAndEditCustomer()">Save
+                </button>
+                <button id="delete" type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                        onclick="deleteCustomer()">Delete
+                </button>
+                <button id="edit" type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                        onclick="saveAndEditCustomer()">Update
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
