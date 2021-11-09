@@ -26,7 +26,7 @@
                     localStorage.setItem("user", JSON.stringify(data));
                     for (let i = 0; i < data.authorities.length; i++) {
                         if (data.authorities[i].authority == 'ROLE_ADMIN') {
-                            window.location.href = "customer/list.html";
+                            window.location.href = "customer/listScroll.html";
                             return;
                         }
                     }

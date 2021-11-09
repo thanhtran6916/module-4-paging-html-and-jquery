@@ -15,7 +15,7 @@ function showCustomer(customer) {
     let content = `<tr><td>${customer.id}</td>
                     <td>${customer.name}</td>
                     <td>${customer.address}</td>
-                    <td>${customer.image}</td>
+                    <td><img src="../../static/image/${customer.image}" alt=""></td>
                     <td><button class="btn btn-warning" onclick="showEdit(${customer.id})">Edit</button></td>
                     <td><button class="btn btn-primary" onclick="showInfo(${customer.id})">Info</button></td>
                     <td><button class="btn btn-danger" onclick="showDelete(${customer.id})">Delete</button></td></tr>`
@@ -39,7 +39,7 @@ function showListCustomer(page) {
             }
             totalPage = data.totalPages;
             page = data.number;
-            $("#showListTable").html(content);
+            $("#showList").html(content);
             pageNumber = page;
             showPaging();
             console.log(page);
